@@ -26,6 +26,9 @@ foreach ($meta_list as $value) {
     CURLOPT_USERAGENT => 'Sample cURL Request'
   ]);
   $resp = curl_exec($curl);
+  if ($value == 'http://18.191.122.156:3000/mailmetadata') {
+    $value = "https://mail.sust.com/service/extension/samlreceiver";
+  }
   $metadata[$value] = json_decode($resp, true);
 }
 
