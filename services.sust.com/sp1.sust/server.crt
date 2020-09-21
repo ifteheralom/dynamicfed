@@ -1,0 +1,69 @@
+Certificate:
+    Data:
+        Version: 3 (0x2)
+        Serial Number: 4101 (0x1005)
+        Signature Algorithm: sha256WithRSAEncryption
+        Issuer: C=BD, ST=Sylhet, O=itest, OU=lab, CN=itest.com
+        Validity
+            Not Before: Dec 11 15:08:25 2019 GMT
+            Not After : Dec 10 15:08:25 2020 GMT
+        Subject: C=BD, ST=Sylhet, O=itest, OU=lab, CN=sp1.sust.com
+        Subject Public Key Info:
+            Public Key Algorithm: rsaEncryption
+                RSA Public-Key: (1024 bit)
+                Modulus:
+                    00:db:f2:2c:36:1f:5f:48:78:24:11:f7:6b:4f:89:
+                    5d:ea:7f:bd:a4:5c:21:d4:df:92:5d:43:62:78:0b:
+                    92:bc:56:dc:44:21:45:5e:19:79:1e:0f:1c:93:7d:
+                    ed:f0:b0:56:07:3b:86:47:96:26:f5:51:35:0c:6f:
+                    2d:1c:a8:18:a9:0f:82:03:68:34:bc:45:42:e9:b5:
+                    3e:2d:bb:26:d4:0c:e0:e6:d0:44:76:0b:70:17:23:
+                    ff:d8:df:0e:36:b2:7f:a0:44:5c:0c:26:0b:63:72:
+                    db:4b:74:23:72:03:d9:fc:a5:43:6d:47:17:2b:fc:
+                    1d:43:4f:98:0c:30:7d:61:81
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Basic Constraints: 
+                CA:FALSE
+            Netscape Comment: 
+                OpenSSL Generated Certificate
+            X509v3 Subject Key Identifier: 
+                40:FC:19:00:4D:F7:BE:6B:20:5A:F8:4D:1D:2F:B1:75:83:5B:1C:B7
+            X509v3 Authority Key Identifier: 
+                keyid:E5:05:33:FD:B4:44:7F:FB:80:BC:07:38:F5:5D:E3:D1:53:83:BD:4D
+
+    Signature Algorithm: sha256WithRSAEncryption
+         18:1a:21:62:87:45:fd:bd:09:2a:6b:88:a2:2c:50:7e:75:72:
+         9c:19:32:b1:c1:cc:37:7a:4f:6f:93:13:70:61:46:23:c5:10:
+         5b:fb:ef:17:5f:e8:cd:c6:36:d8:f6:4d:40:25:0e:5e:8f:c6:
+         22:ff:5b:10:99:fb:61:d4:8a:58:33:48:24:61:34:8e:07:f2:
+         70:1d:9f:29:c3:15:64:01:32:97:39:f0:40:85:14:37:25:f5:
+         74:b9:5a:c4:75:7e:8c:16:9b:d3:6d:ec:45:0f:14:08:62:1a:
+         aa:f1:e4:a7:3a:9c:1d:02:11:ee:ff:f4:bb:e6:0b:b2:ca:f2:
+         ab:4c:7e:55:cd:0a:84:d0:49:81:4a:67:4a:71:24:6f:0d:ba:
+         5d:f3:ee:6f:de:a6:52:38:8b:a2:29:41:35:58:16:55:75:09:
+         3b:f4:8b:dc:70:cf:f4:10:e6:84:c3:8d:6f:46:34:ca:7e:52:
+         10:dd:be:91:05:a4:de:e7:18:5b:d7:7d:d4:70:5d:31:0c:f2:
+         ea:0d:53:8e:55:c9:3c:54:aa:97:0e:30:6b:2b:29:e3:96:f4:
+         23:92:8a:18:93:9e:4c:54:98:3d:db:03:2a:7d:2d:e1:a0:a7:
+         94:91:e3:2d:5c:6f:f6:ed:d9:98:6c:67:46:d0:06:8c:ea:aa:
+         c3:e4:bd:72
+-----BEGIN CERTIFICATE-----
+MIIDFjCCAf6gAwIBAgICEAUwDQYJKoZIhvcNAQELBQAwUDELMAkGA1UEBhMCQkQx
+DzANBgNVBAgMBlN5bGhldDEOMAwGA1UECgwFaXRlc3QxDDAKBgNVBAsMA2xhYjES
+MBAGA1UEAwwJaXRlc3QuY29tMB4XDTE5MTIxMTE1MDgyNVoXDTIwMTIxMDE1MDgy
+NVowUzELMAkGA1UEBhMCQkQxDzANBgNVBAgMBlN5bGhldDEOMAwGA1UECgwFaXRl
+c3QxDDAKBgNVBAsMA2xhYjEVMBMGA1UEAwwMc3AxLnN1c3QuY29tMIGfMA0GCSqG
+SIb3DQEBAQUAA4GNADCBiQKBgQDb8iw2H19IeCQR92tPiV3qf72kXCHU35JdQ2J4
+C5K8VtxEIUVeGXkeDxyTfe3wsFYHO4ZHlib1UTUMby0cqBipD4IDaDS8RULptT4t
+uybUDODm0ER2C3AXI//Y3w42sn+gRFwMJgtjcttLdCNyA9n8pUNtRxcr/B1DT5gM
+MH1hgQIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVuU1NM
+IEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUQPwZAE33vmsgWvhNHS+x
+dYNbHLcwHwYDVR0jBBgwFoAU5QUz/bREf/uAvAc49V3j0VODvU0wDQYJKoZIhvcN
+AQELBQADggEBABgaIWKHRf29CSpriKIsUH51cpwZMrHBzDd6T2+TE3BhRiPFEFv7
+7xdf6M3GNtj2TUAlDl6PxiL/WxCZ+2HUilgzSCRhNI4H8nAdnynDFWQBMpc58ECF
+FDcl9XS5WsR1fowWm9Nt7EUPFAhiGqrx5Kc6nB0CEe7/9LvmC7LK8qtMflXNCoTQ
+SYFKZ0pxJG8Nul3z7m/eplI4i6IpQTVYFlV1CTv0i9xwz/QQ5oTDjW9GNMp+UhDd
+vpEFpN7nGFvXfdRwXTEM8uoNU45VyTxUqpcOMGsrKeOW9COSihiTnkxUmD3bAyp9
+LeGgp5SR4y1cb/bt2ZhsZ0bQBozqqsPkvXI=
+-----END CERTIFICATE-----
