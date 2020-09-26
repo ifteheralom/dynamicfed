@@ -1,6 +1,8 @@
 <?php
 
 require_once('../../_include.php');
+include_once __DIR__ . '/../../../dynamicfed/fetch-metadata.php';
+include_once __DIR__ . '/../../../dynamicfed/consts.php';
 
 use SAML2\Constants;
 use SimpleSAML\Utils\Auth as Auth;
@@ -11,6 +13,44 @@ use SimpleSAML\Utils\Config\Metadata as Metadata;
 // load SimpleSAMLphp configuration and metadata
 $config = \SimpleSAML\Configuration::getInstance();
 $metadata = \SimpleSAML\Metadata\MetaDataStorageHandler::getMetadataHandler();
+
+if (!empty($_POST) && isset($_POST['dynamicfed'])) {
+
+    echo get_host_name() . ": Posting Code...";
+
+    $spentityid = $_POST['spentityid'];
+    $idpentityid = $_POST['idpentityid'];
+    $idpcode = $_POST['idpcode'];
+    postCodeFor($spentityid, $idpentityid, $idpcode);
+    exit(0);
+} else if (!empty($_GET) && isset($_GET['report'])) {
+
+    echo get_host_name() . ": Received dynamicfed Report... Verifying Code";
+
+    $spentityid = $_GET['spentityid'];
+    $idpentityid = $_GET['idpentityid'];
+    $idpcode = $_GET['idpcode'];
+    $headurl = substr($spentityid, 0, -54);
+
+    $resp = getCodeFor($spentityid, $idpentityid, $idpcode);
+
+    $idpcode_str =  '"' . (string)$idpcode . '"';
+
+    echo $resp . " " . $idpcode_str;
+
+    if ($resp === $idpcode_str) {
+
+        echo get_host_name() . ": Code Verified... Saving SP: " . $spentityid;
+        sleep(3);
+
+        $resp = postMetaDataFor($spentityid, $idpentityid, $idpcode, get_host_name());
+        if ($resp == 'Success') {
+            header("Location: $headurl");
+        }
+    }
+    exit(0);
+}
+
 
 if (!$config->getBoolean('enable.saml20-idp', false)) {
     throw new \SimpleSAML\Error\Error('NOACCESS');
@@ -213,38 +253,19 @@ try {
 
 
     if (array_key_exists('idpcode', $_GET)) {
-        $spentityid = $_GET['spentityid'];
-        $idpentityid = $_GET['idpentityid'];
-        $idpcode = $_GET['idpcode'];
-        $submiturl = substr($spentityid, 0, -54) . "/dynamicfed.php?" . "spentityid=" . $spentityid . "&&idpentityid=" . $idpentityid . "&&idpcode=" . $idpcode;
-        $headurl = substr($spentityid, 0, -54);
+        // $spentityid = $_GET['spentityid'];
+        // $idpentityid = $_GET['idpentityid'];
+        // $idpcode = $_GET['idpcode'];
+        // $submiturl = substr($spentityid, 0, -54) . "/dynamicfed.php?" . "spentityid=" . $spentityid . "&&idpentityid=" . $idpentityid . "&&idpcode=" . $idpcode;
+        // $headurl = substr($spentityid, 0, -54);
 
-        $posturl = 'http://18.191.122.156:3000/trustedlist';
-        $fields = array(
-            'title' => urlencode('idp'),
-            'spentityid' => urlencode($spentityid),
-            'idpentityid' => urlencode($idpentityid)
-        );
-        $fields_string = '';
-        foreach ($fields as $key => $value) {
-            $fields_string .= $key . '=' . $value . '&';
-        }
-        rtrim($fields_string, '&');
+        // $resp = postMetaDataFor($spentityid, $idpentityid, $current_host_name,);
+        // echo $resp;
 
-        $curl = curl_init();
-        curl_setopt_array($curl, [
-            CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_URL => $posturl,
-            CURLOPT_POST => count($fields),
-            CURLOPT_POSTFIELDS => $fields_string
-        ]);
-        $resp = curl_exec($curl);
-        curl_close($curl);
-
-        if ($resp == 'success') {
-            header("Location: $headurl");
-        }
-        exit(0);
+        // if ($resp == 'success') {
+        //     header("Location: $headurl");
+        // }
+        // exit(0);
     } else {
         if (array_key_exists('output', $_GET) && $_GET['output'] == 'xhtml') {
             $defaultidp = $config->getString('default-saml20-idp', null);

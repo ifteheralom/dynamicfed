@@ -10,10 +10,10 @@ if (!$auth->isAuthenticated()) {
 } else {
     $attrs = $auth->getAttributes();
 
-    if ($attrs['eduPersonAffiliation'][1] == 'employee') {
+    if ($attrs['eduPersonAffiliation'][0] == 'member') {
         // echo "You are logged in";
     } else {
-        header("Location: /test.php");
+        header("Location: /");
     }
 }
 ?>
@@ -28,14 +28,14 @@ if (!$auth->isAuthenticated()) {
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <title>RPS</title>
+    <title>Admission System</title>
 </head>
 
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/">
             <!-- <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> -->
-            SUST Online Admission Services
+            SUST Online Student Services
         </a>
         <form class="form-inline my-2 my-lg-0">
             <button class="btn btn-outline-warning my-2 my-sm-0" type="button" onclick="window.location.href = '/logout.php';">Logout</button>
@@ -50,7 +50,7 @@ if (!$auth->isAuthenticated()) {
                 Coming Soon...
             </div>
             <div class="card-body">
-                <h5 class="card-title">Online Admission Test and Enrollment System</h5>
+                <h5 class="card-title">University Student Services</h5>
                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                 <a href="/" class="btn btn-primary">Go somewhere</a>
             </div>

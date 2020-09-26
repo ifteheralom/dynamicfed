@@ -1,8 +1,8 @@
 <?php
 /*
- * The configuration of SimpleSAMLphp
- *
- */
+                                                                     * The configuration of SimpleSAMLphp
+                                                                     *
+                                                                     */
 
 $config = [
 
@@ -34,7 +34,7 @@ $config = [
      * relative to an application protected by SimpleSAMLphp.
      */
     //'application' => [
-        /*
+    /*
          * The 'baseURL' configuration option allows you to specify a protocol,
          * host and optionally a port that serves as the canonical base for all
          * your application's URLs. This is useful when the environment
@@ -48,7 +48,7 @@ $config = [
          * need to compute the right URLs yourself and pass them dynamically
          * to SimpleSAMLphp's API.
          */
-        //'baseURL' => 'https://example.com',
+    //'baseURL' => 'https://example.com',
     //],
 
     /*
@@ -150,7 +150,7 @@ $config = [
      * Example:
      *   'trusted.url.domains' => ['sp.example.com', 'app.example.com'],
      */
-    'trusted.url.domains' => [],
+    'trusted.url.domains' => ['mail.service.com'],
 
     /*
      * Enable regular expression matching of trusted.url.domains.
@@ -326,7 +326,7 @@ $config = [
      * This is an array of outputs. Each output has at least a 'class' option, which
      * selects the output.
      */
-    'statistics.out' => [// Log statistics to the normal log.
+    'statistics.out' => [ // Log statistics to the normal log.
         /*
         [
             'class' => 'core:Log',
@@ -339,8 +339,7 @@ $config = [
             'class' => 'core:File',
             'directory' => '/var/log/stats',
         ],
-        */
-    ],
+        */],
 
 
 
@@ -422,8 +421,7 @@ $config = [
             'password' => 'secret',
             'persistent' => false,
         ],
-        */
-    ],
+        */],
 
 
 

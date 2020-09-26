@@ -1,32 +1,36 @@
 <?php
-$metadata = [];
+include_once __DIR__ . '/../dynamicfed/fetch-metadata.php';
 
-// Get cURL resource
-$curl = curl_init();
-// Set some options - we are passing in a useragent too here
-curl_setopt_array($curl, [
-  CURLOPT_RETURNTRANSFER => 1,
-  CURLOPT_URL => 'http://18.191.122.156:3000/sp2',
-  CURLOPT_USERAGENT => 'Sample cURL Request'
-]);
-// Send the request & save response to $resp
-$resp = curl_exec($curl);
-// Close request to clear up some resources
-curl_close($curl);
-$meta_list = json_decode($resp, true);
+$metadata = gettMetaDataFor(get_host_name());
 
-foreach ($meta_list as $value) {
-  // Get cURL resource
-  $curl = curl_init();
-  // Set some options - we are passing in a useragent too here
-  curl_setopt_array($curl, [
-    CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => $value,
-    CURLOPT_USERAGENT => 'Sample cURL Request'
-  ]);
-  $resp = curl_exec($curl);
-  $metadata[$value] = json_decode($resp, true);
-}
+// $metadata = [];
+
+// // Get cURL resource
+// $curl = curl_init();
+// // Set some options - we are passing in a useragent too here
+// curl_setopt_array($curl, [
+//   CURLOPT_RETURNTRANSFER => 1,
+//   CURLOPT_URL => 'http://18.191.122.156:3000/sp2',
+//   CURLOPT_USERAGENT => 'Sample cURL Request'
+// ]);
+// // Send the request & save response to $resp
+// $resp = curl_exec($curl);
+// // Close request to clear up some resources
+// curl_close($curl);
+// $meta_list = json_decode($resp, true);
+
+// foreach ($meta_list as $value) {
+//   // Get cURL resource
+//   $curl = curl_init();
+//   // Set some options - we are passing in a useragent too here
+//   curl_setopt_array($curl, [
+//     CURLOPT_RETURNTRANSFER => 1,
+//     CURLOPT_URL => $value,
+//     CURLOPT_USERAGENT => 'Sample cURL Request'
+//   ]);
+//   $resp = curl_exec($curl);
+//   $metadata[$value] = json_decode($resp, true);
+// }
 
 // $metadata['http://idp.sust.com/simplesaml/saml2/idp/metadata.php'] = array(
 //   'metadata-set' => 'saml20-idp-remote',

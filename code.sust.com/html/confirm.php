@@ -48,3 +48,25 @@ $redir_url = "http://code.sust.com?spentityid=" . $spentityid . "&&idpentityid="
 </body>
 
 </html>
+
+
+
+// post code
+idp entity id
+sp entity id
+code
+=> success
+
+
+// code check
+idp entity id
+sp entity id
+=> code
+
+
+// code delete
+idp entity id
+sp entity id
+=> success
+
+http://54.151.153.117:8082

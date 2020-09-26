@@ -71,7 +71,7 @@ $config = [
     ],
     */
 
-    
+
     'example-userpass' => [
         'exampleauth:UserPass',
 
@@ -81,24 +81,24 @@ $config = [
         //'remember.username.checked' => false,
 
         'student1:9590' => [
-            'uid' => ['student1@mail.sust.com'],
+            'uid' => ['student1@mail.service.com'],
             'eduPersonAffiliation' => ['member', 'student'],
         ],
-	'student2:9590' => [
-            'uid' => ['student2@mail.sust.com'],
+        'student2:9590' => [
+            'uid' => ['student2@mail.service.com'],
             'eduPersonAffiliation' => ['member', 'student'],
         ],
         'employee1:9590' => [
-            'uid' => ['employee1@mail.sust.com'],
+            'uid' => ['employee1@mail.service.com'],
             'eduPersonAffiliation' => ['member', 'employee'],
         ],
-	'employee2:9590' => [
-            'uid' => ['employee2@mail.sust.com'],
+        'employee2:9590' => [
+            'uid' => ['employee2@mail.service.com'],
             'eduPersonAffiliation' => ['member', 'employee'],
         ],
 
     ],
-    
+
 
     /*
     'crypto-hash' => [

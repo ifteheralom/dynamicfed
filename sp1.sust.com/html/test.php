@@ -1,70 +1,41 @@
-<?php
+<!doctype html>
+<html lang="en">
 
-// require_once('../simplesamlphp/lib/_autoload.php');
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-// $auth = new \SimpleSAML\Auth\Simple('default-sp');
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-// $auth->requireAuth();
+    <title>SP-2</title>
+</head>
 
-// $attrs = $auth->getAttributes();
-// echo $attrs[urlencode('eduPersonAffiliation')][0];
-// print_r($attrs);
-// echo urlencode('eduPersonAffiliation');
-// phpinfo();
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            SP2
+        </a>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-4">Access Denied, only for Employees</h1>
+        </div>
+    </div>
 
-use SimpleSAML\Utils\Config\Metadata;
+    <div class="container">
+        <div class="input-group input-group-lg">
+            <button type="button" class="form-control btn btn-outline-info" onclick="window.location.href = 'http://sp2.sust.com';">Go to SP 2</button>
+        </div>
+    </div>
 
-$metadata = (array(
-  'entityid' => 'https://mail.sust.com/service/extension/samlreceiver ',
-  'contacts' =>
-  array(),
-  'metadata-set' => 'saml20-sp-remote',
-  'AssertionConsumerService' =>
-  array(
-    0 =>
-    array(
-      'Binding' => 'urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST',
-      'Location' => 'https://mail.sust.com/service/extension/samlreceiver',
-      'index' => 0,
-    ),
-  ),
-  'SingleLogoutService' =>
-  array(),
-  'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
-  'validate.authnrequest' => false,
-  'certificate' => 'example.org.crt',
-));
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
 
-echo print_r(json_encode($metadata));
-
-
-
-// // Get cURL resource
-// $curl = curl_init();
-// // Set some options - we are passing in a useragent too here
-// curl_setopt_array($curl, [
-//   CURLOPT_RETURNTRANSFER => 1,
-//   CURLOPT_URL => 'http://18.191.122.156:3000/',
-//   CURLOPT_USERAGENT => 'Sample cURL Request'
-// ]);
-// // Send the request & save response to $resp
-// $resp = curl_exec($curl);
-// // Close request to clear up some resources
-// curl_close($curl);
-// $meta_list = json_decode($resp, true);
-// $metaArray = [];
-
-// foreach ($meta_list as $value) {
-//   // Get cURL resource
-//   $curl = curl_init();
-//   // Set some options - we are passing in a useragent too here
-//   curl_setopt_array($curl, [
-//     CURLOPT_RETURNTRANSFER => 1,
-//     CURLOPT_URL => $value,
-//     CURLOPT_USERAGENT => 'Sample cURL Request'
-//   ]);
-//   $resp = curl_exec($curl);
-//   $metaArray[$value] = json_decode($resp, true);
-// }
-// // print("<pre>" . print_r($metaArray, true) . "</pre>");
-// echo print_r($metaArray[$meta_list[0]]);
+</html>

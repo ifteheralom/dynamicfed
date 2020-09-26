@@ -4,7 +4,8 @@ require_once('../simplesamlphp/lib/_autoload.php');
 $auth = new \SimpleSAML\Auth\Simple('default-sp');
 $spentityid = $_GET['spentityid'];
 $idpentityid = $_GET['idpentityid'];
-$submiturl = substr($spentityid, 0, -54) . "/dynamicfed.php";
+// $submiturl = substr($spentityid, 0, -54) . "/dynamicfed.php";
+$submiturl = $idpentityid;
 if (!$auth->isAuthenticated()) {
     /* Show login link. */
     header("Location: /login.php?spentityid=$spentityid&&idpentityid=$idpentityid");
@@ -63,6 +64,10 @@ if (!$auth->isAuthenticated()) {
                     <div class="form-group">
                         <label for="idpcode">IDP Code</label>
                         <input type="text" class="form-control" name="idpcode" id="idpcode" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dynamicfed">dynamicfed</label>
+                        <input type="hidden" class="form-control" name="dynamicfed" id="dynamicfed" value="dynamicfed" required>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

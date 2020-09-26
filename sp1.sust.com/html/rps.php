@@ -10,10 +10,10 @@ if (!$auth->isAuthenticated()) {
 } else {
     $attrs = $auth->getAttributes();
 
-    if ($attrs['eduPersonAffiliation'][0] == 'member') {
+    if ($attrs['eduPersonAffiliation'][1] == 'employee') {
         // echo "You are logged in";
     } else {
-        header("Location: /");
+        header("Location: /test.php");
     }
 }
 

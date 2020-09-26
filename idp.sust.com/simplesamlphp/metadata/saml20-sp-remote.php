@@ -1,36 +1,40 @@
-
 <?php
-$metadata = [];
 
-// Get cURL resource
-$curl = curl_init();
-// Set some options - we are passing in a useragent too here
-curl_setopt_array($curl, [
-  CURLOPT_RETURNTRANSFER => 1,
-  CURLOPT_URL => 'http://18.191.122.156:3000/idp',
-  CURLOPT_USERAGENT => 'Sample cURL Request'
-]);
-// Send the request & save response to $resp
-$resp = curl_exec($curl);
-// Close request to clear up some resources
-curl_close($curl);
-$meta_list = json_decode($resp, true);
+include_once __DIR__ . '/../dynamicfed/fetch-metadata.php';
 
-foreach ($meta_list as $value) {
-  // Get cURL resource
-  $curl = curl_init();
-  // Set some options - we are passing in a useragent too here
-  curl_setopt_array($curl, [
-    CURLOPT_RETURNTRANSFER => 1,
-    CURLOPT_URL => $value,
-    CURLOPT_USERAGENT => 'Sample cURL Request'
-  ]);
-  $resp = curl_exec($curl);
-  if ($value == 'http://18.191.122.156:3000/mailmetadata') {
-    $value = "https://mail.sust.com/service/extension/samlreceiver";
-  }
-  $metadata[$value] = json_decode($resp, true);
-}
+$metadata = gettMetaDataFor(get_host_name());
+
+// if ($value == 'http://18.191.122.156:3000/mailmetadata') {
+//   $value = "https://mail.sust.com/service/extension/samlreceiver";
+// }
+
+// // Get cURL resource
+// $curl = curl_init();
+// // Set some options - we are passing in a useragent too here
+// curl_setopt_array($curl, [
+//   CURLOPT_RETURNTRANSFER => 1,
+//   CURLOPT_URL => 'http://18.191.122.156:3000/idp',
+//   CURLOPT_USERAGENT => 'Sample cURL Request'
+// ]);
+// // Send the request & save response to $resp
+// $resp = curl_exec($curl);
+// // Close request to clear up some resources
+// curl_close($curl);
+// $meta_list = json_decode($resp, true);
+
+// foreach ($meta_list as $value) {
+//   // Get cURL resource
+//   $curl = curl_init();
+//   // Set some options - we are passing in a useragent too here
+//   curl_setopt_array($curl, [
+//     CURLOPT_RETURNTRANSFER => 1,
+//     CURLOPT_URL => $value,
+//     CURLOPT_USERAGENT => 'Sample cURL Request'
+//   ]);
+//   $resp = curl_exec($curl);
+
+//   $metadata[$value] = json_decode($resp, true);
+// }
 
 // $metadata['https://mail.sust.com/service/extension/samlreceiver'] = array(
 //   'entityid' => 'https://mail.sust.com/service/extension/samlreceiver',

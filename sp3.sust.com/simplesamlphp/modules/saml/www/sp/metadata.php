@@ -1,5 +1,16 @@
 <?php
 
+include_once __DIR__ . '/../../../../dynamicfed/fetch-metadata.php';
+
+if (!empty($_GET) && isset($_GET['dynamicfed'])) {
+    $spentityid = $_GET['spentityid'];
+    $idpentityid = $_GET['idpentityid'];
+    $idpcode = $_GET['idpcode'];
+    echo get_host_name() . ": Received Code... Saving IDP Entity ID...";
+    postMetaDataFor($spentityid, $idpentityid, $idpcode, get_host_name(), true);
+    exit(0);
+}
+
 if (!array_key_exists('PATH_INFO', $_SERVER)) {
     throw new \SimpleSAML\Error\BadRequest('Missing authentication source id in metadata URL');
 }

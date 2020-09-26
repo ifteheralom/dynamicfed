@@ -1,12 +1,7 @@
 <?php
+include_once __DIR__ . '/../dynamicfed/fetch-metadata.php';
 
-/**
- * SAML 2.0 remote IdP metadata for SimpleSAMLphp.
- *
- * Remember to remove the IdPs you don't use from this file.
- *
- * See: https://simplesamlphp.org/docs/stable/simplesamlphp-reference-idp-remote
- */
+$metadata = gettMetaDataFor(get_host_name());
 
 // $metadata['http://idp.sust.com/simplesaml/saml2/idp/metadata.php'] = array (
 //   'metadata-set' => 'saml20-idp-remote',
@@ -41,13 +36,13 @@
 // );
 
 
-$curl = curl_init();
-curl_setopt_array($curl, [
-  CURLOPT_RETURNTRANSFER => 1,
-  CURLOPT_URL => 'http://idp.sust.com/simplesaml/saml2/idp/metadata.php',
-  CURLOPT_USERAGENT => 'Sample cURL Request'
-]);
-$resp = curl_exec($curl);
-curl_close($curl);
+// $curl = curl_init();
+// curl_setopt_array($curl, [
+//   CURLOPT_RETURNTRANSFER => 1,
+//   CURLOPT_URL => 'http://idp.sust.com/simplesaml/saml2/idp/metadata.php',
+//   CURLOPT_USERAGENT => 'Sample cURL Request'
+// ]);
+// $resp = curl_exec($curl);
+// curl_close($curl);
 
-$metadata['http://idp.sust.com/simplesaml/saml2/idp/metadata.php'] = json_decode($resp, true);
+// $metadata['http://idp.sust.com/simplesaml/saml2/idp/metadata.php'] = json_decode($resp, true);

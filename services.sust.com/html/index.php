@@ -39,6 +39,14 @@
 
         <div class="card-deck">
             <div class="card border-secondary">
+                <img src="images/student.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title"><a href="http://sp2.sust.com/student.php">Student Services</a></h5>
+                    <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
+                </div>
+            </div>
+            <div class="card border-secondary">
                 <img src="images/mail.png" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title"><a href="http://sp1.sust.com/mail.php">EMail Service</a></h5>
@@ -55,17 +63,9 @@
                 </div>
             </div>
             <div class="card border-secondary">
-                <img src="images/admission.png" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title"><a href="http://sp2.sust.com/adm.php">Admission System</a></h5>
-                    <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
-                </div>
-            </div>
-            <div class="card border-secondary">
                 <img src="images/official.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="http://sp2.sust.com/office.php">Offical Portal</a></h5>
+                    <h5 class="card-title"><a href="http://sp2.sust.com/office.php">Official Portal</a></h5>
                     <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
                 </div>
